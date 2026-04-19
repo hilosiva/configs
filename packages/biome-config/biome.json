@@ -38,7 +38,8 @@
       },
       "suspicious": {
         "noDuplicateProperties": "error",
-        "noIrregularWhitespace": "error"
+        "noIrregularWhitespace": "error",
+        "noUnknownAtRules": "off"
       },
       "style": {
         "noDescendingSpecificity": "error"

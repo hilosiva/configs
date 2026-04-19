@@ -24,6 +24,7 @@ Biome v2 を対象とした共有設定です。
 |---|---|
 | \`correctness/noUnknownMediaFeatureName\` | \`@custom-media --md\`, \`--lg\` など、カスタムメディアクエリを使うため |
 | \`correctness/noUnknownFunction\` | \`fluid()\` など、ビルド時に変換されるカスタム CSS 関数を使うため |
+| \`suspicious/noUnknownAtRules\` | \`@custom-media\` など CSS 仕様準拠のカスタム at-rule を使うため |
 | \`complexity/noForEach\` | forEach の可読性を優先するため |
 
 ## 追加で有効化しているルール
@@ -43,6 +44,7 @@ Biome v2 を対象とした共有設定です。
 |---|---|
 | \`noDuplicateProperties\` | 同じ CSS プロパティの重複定義をエラー |
 | \`noIrregularWhitespace\` | 不可視の不正な空白文字をエラー |
+| ~~\`noUnknownAtRules\`~~ | OFF（\`@custom-media\` 等の仕様準拠 at-rule を許容） |
 
 ### style（スタイル）
 
