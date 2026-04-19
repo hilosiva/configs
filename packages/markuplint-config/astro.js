@@ -7,6 +7,10 @@ export default {
   rules: {
     // インライン JS（onclick 等）は禁止。JS は外部ファイルで管理する
     "no-use-event-handler-attr": true,
+    // Astro はコンポーネントベースのため h1 の存在を静的解析で追えない
+    "required-h1": false,
+    // コンポーネント単体での見出し階層チェックも意味をなさないため無効化
+    "heading-levels": false,
   },
   nodeRules: [
     {
@@ -25,22 +29,6 @@ export default {
       },
     },
   ],
-  // グローバル設定を維持しつつ差分だけ上書きする（"reset" だとルールが消えるため必須）
-  overrideMode: "merge",
-  overrides: {
-    "./src/components/**/*.astro": {
-      rules: {
-        // コンポーネントは h3 から始まることがあるため h1 必須を無効化
-        "required-h1": false,
-        // コンポーネント単体での見出し階層チェックは意味をなさないため無効化
-        "heading-levels": false,
-      },
-    },
-    "./src/layouts/**/*.astro": {
-      rules: {
-        // レイアウトは page から h1 を受け取るため h1 必須を無効化
-        "required-h1": false,
-      },
-    },
-  },
+  // ※ components / layouts の required-h1 等は各プロジェクトの .markuplintrc で overrides する
+  //   extends 経由の overrides はパスが node_modules 起点になるため機能しない
 };

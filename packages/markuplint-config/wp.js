@@ -7,38 +7,30 @@ export default {
   rules: {
     // インライン JS（onclick 等）は禁止。JS は外部ファイルで管理する
     "no-use-event-handler-attr": true,
+    // WP テーマは PHP パーシャルの集合体であるため以下を無効化
+    "doctype": false,
+    "required-h1": false,
+    "character-reference": false,
+    "permitted-contents": false,
+    "required-element": false,
+    "no-orphaned-end-tag": false,
+    // PHP コードが属性位置に展開されるとパーサーがプレースホルダを不正属性と判定するため無効化
+    "invalid-attr": false,
   },
-  // グローバル設定を維持しつつ差分だけ上書きする（"reset" だとルールが消えるため必須）
-  overrideMode: "merge",
-  overrides: {
-    "./**/*.php": {
+  nodeRules: [
+    {
+      // <html <?php language_attributes(); ?>> の lang は PHP で動的に出力されるため無効化
+      selector: "html",
       rules: {
-        // PHP テンプレートは部分的な HTML になるため無効化
-        "doctype": false,
-        "required-h1": false,
-        "character-reference": false,
-        "permitted-contents": false,
-        "required-element": false,
-        // 部分テンプレートは開き/閉じタグが別ファイルに分かれるため無効化
-        "no-orphaned-end-tag": false,
+        "required-attr": false,
       },
-      nodeRules: [
-        {
-          // PHP テンプレートの html タグは属性が動的なため無効化
-          selector: "html",
-          rules: {
-            "invalid-attr": false,
-            "required-attr": false,
-          },
-        },
-        {
-          // PHP テンプレートの head は部分的なため無効化
-          selector: "head",
-          rules: {
-            "required-element": false,
-          },
-        },
-      ],
     },
-  },
+    {
+      // head 内の必須要素チェックを無効化（wp_head() が動的に出力するため）
+      selector: "head",
+      rules: {
+        "required-element": false,
+      },
+    },
+  ],
 };
