@@ -4,7 +4,10 @@ export default {
     "\\.php$": "@markuplint/php-parser",
   },
   extends: ["markuplint:recommended"],
-  rules: {},
+  rules: {
+    // インライン JS（onclick 等）は禁止。JS は外部ファイルで管理する
+    "no-use-event-handler-attr": true,
+  },
   overrides: {
     "./**/*.php": {
       rules: {
