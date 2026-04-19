@@ -19,10 +19,11 @@ export default {
   },
   nodeRules: [
     {
-      // <html <?php language_attributes(); ?>> の lang は PHP で動的に出力されるため無効化
+      // <html <?php language_attributes(); ?>> の lang・PHP属性は動的出力のため無効化
       selector: "html",
       rules: {
         "required-attr": false,
+        "invalid-attr": false,
       },
     },
     {
