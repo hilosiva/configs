@@ -25,6 +25,8 @@ export default {
       },
     },
   ],
+  // グローバル設定を維持しつつ差分だけ上書きする（"reset" だとルールが消えるため必須）
+  overrideMode: "merge",
   overrides: {
     "./src/components/**/*.astro": {
       rules: {
