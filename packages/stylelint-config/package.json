@@ -1,6 +1,6 @@
 {
   "name": "@hilosiva/stylelint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Stylelint shared config for @hilosiva projects",
   "type": "module",
   "main": "index.js",

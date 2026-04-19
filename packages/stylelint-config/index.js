@@ -7,7 +7,7 @@ export default {
     "length-zero-no-unit": true,
     "color-hex-length": "short",
     "color-function-notation": "modern",
-    "alpha-value-notation": "modern",
+    "alpha-value-notation": "number",
     "font-weight-notation": "numeric",
     "function-name-case": "lower",
     "selector-type-case": "lower",
