@@ -1,6 +1,6 @@
 {
   "name": "@hilosiva/markuplint-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Markuplint shared config for @hilosiva projects",
   "type": "module",
   "main": "index.js",

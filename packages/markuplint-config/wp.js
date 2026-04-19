@@ -19,6 +19,8 @@ export default {
         "character-reference": false,
         "permitted-contents": false,
         "required-element": false,
+        // 部分テンプレートは開き/閉じタグが別ファイルに分かれるため無効化
+        "no-orphaned-end-tag": false,
       },
       nodeRules: [
         {
