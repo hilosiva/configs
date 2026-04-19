@@ -1,0 +1,35 @@
+{
+  "name": "@hilosiva/stylelint-config",
+  "version": "0.0.2",
+  "description": "Stylelint shared config for @hilosiva projects",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "author": "Shibata Hironori",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hilosiva/configs.git",
+    "directory": "packages/stylelint-config"
+  },
+  "bugs": "https://github.com/hilosiva/configs/issues",
+  "homepage": "https://github.com/hilosiva/configs",
+  "publishConfig": {
+    "provenance": false,
+    "access": "public"
+  },
+  "peerDependencies": {
+    "stylelint": ">=16",
+    "stylelint-config-html": ">=1",
+    "stylelint-config-recess-order": ">=7"
+  }
+}

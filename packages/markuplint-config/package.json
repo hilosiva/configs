@@ -1,0 +1,45 @@
+{
+  "name": "@hilosiva/markuplint-config",
+  "version": "0.0.1",
+  "description": "Markuplint shared config for @hilosiva projects",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./astro": "./astro.js",
+    "./wp": "./wp.js"
+  },
+  "files": [
+    "index.js",
+    "astro.js",
+    "wp.js"
+  ],
+  "license": "MIT",
+  "author": "Shibata Hironori",
+  "keywords": [
+    "markuplint",
+    "markuplint-config"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hilosiva/configs.git",
+    "directory": "packages/markuplint-config"
+  },
+  "bugs": "https://github.com/hilosiva/configs/issues",
+  "homepage": "https://github.com/hilosiva/configs",
+  "publishConfig": {
+    "provenance": false,
+    "access": "public"
+  },
+  "peerDependencies": {
+    "markuplint": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "@markuplint/astro-parser": {
+      "optional": true
+    },
+    "@markuplint/php-parser": {
+      "optional": true
+    }
+  }
+}
